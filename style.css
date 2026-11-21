@@ -4,6 +4,9 @@
   --laranja: #FF6A00;
   --laranja-claro: #FF8A35;
   --laranja-escuro: #9C4100;
+  --whatsapp: #25D366;
+  --whatsapp-fundo: #EAF9EF;
+  --amarelo-icone: #FFE082;
   --branco: #FFFFFF;
   --creme: #FFF8E5;
   --creme-escuro: #FFE9B0;
@@ -24,6 +27,8 @@ html {
 
 body {
   margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
   color: var(--preto);
   background: var(--branco);
   font-family: "DM Sans", sans-serif;
@@ -40,7 +45,7 @@ a {
 }
 
 .container {
-  width: min(1120px, calc(100% - 36px));
+  width: min(1200px, calc(100% - 36px));
   margin-inline: auto;
 }
 
@@ -216,8 +221,13 @@ h2 {
 
 .hero-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
   gap: 11px;
+}
+
+.hero-actions .button {
+  width: 100%;
 }
 
 .button {
@@ -376,7 +386,7 @@ h2 {
 
 .card-visual {
   display: grid;
-  min-height: 130px;
+  min-height: 146px;
   place-items: center;
   background: var(--amarelo);
 }
@@ -385,15 +395,20 @@ h2 {
   background: var(--creme-escuro);
 }
 
-.card-emoji {
+.card-icon-circle {
   display: grid;
-  width: 82px;
-  height: 82px;
+  width: 112px;
+  height: 112px;
   place-items: center;
-  border: 2px dashed var(--laranja);
+  border: 2px solid var(--preto);
   border-radius: 50%;
-  background: var(--branco);
-  font-size: 3rem;
+  background: var(--amarelo-icone);
+}
+
+.card-icon-circle svg {
+  display: block;
+  width: 96px;
+  height: 96px;
 }
 
 .card-content {
@@ -594,6 +609,22 @@ h2 {
   stroke: none;
 }
 
+.whatsapp-button {
+  border-color: var(--whatsapp);
+  background: var(--branco);
+}
+
+.whatsapp-button:hover {
+  background: var(--whatsapp-fundo);
+}
+
+.whatsapp-icon {
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  fill: var(--whatsapp);
+}
+
 .site-footer {
   padding: 36px 0 96px;
   background: var(--preto);
@@ -616,10 +647,6 @@ h2 {
   background: var(--amarelo);
   color: var(--preto);
   font-size: 1.2rem;
-}
-
-.footer-brand > span {
-  font-size: 1.4rem;
 }
 
 .footer-logo {
@@ -654,12 +681,20 @@ h2 {
   font-size: 0.82rem;
 }
 
-.floating-call {
+.floating-actions {
   position: fixed;
   z-index: 15;
-  right: 16px;
+  right: 12px;
+  left: 12px;
   bottom: max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.floating-button {
   display: inline-flex;
+  min-width: 116px;
   min-height: 52px;
   align-items: center;
   justify-content: center;
@@ -667,14 +702,22 @@ h2 {
   padding: 10px 18px;
   border: 2px solid var(--preto);
   border-radius: 999px;
-  background: var(--laranja);
   color: var(--preto);
   box-shadow: 0 5px 18px rgba(17, 17, 17, 0.24);
   font-weight: 800;
   text-decoration: none;
 }
 
-.floating-call span {
+.floating-call {
+  background: var(--laranja);
+}
+
+.floating-whatsapp {
+  background: var(--branco);
+}
+
+.floating-button span,
+.floating-button .whatsapp-icon {
   font-size: 1.15rem;
 }
 
@@ -689,17 +732,18 @@ h2 {
   transform: translateY(0);
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 :focus-visible {
   outline: 3px solid var(--laranja);
   outline-offset: 4px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 480px) {
   .menu-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .drink-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -710,10 +754,18 @@ h2 {
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
-@media (min-width: 820px) {
+@media (min-width: 768px) {
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .button {
+    width: auto;
+  }
+
   .hero-layout {
     grid-template-columns: 1.2fr 0.8fr;
   }
@@ -734,6 +786,19 @@ h2 {
     grid-template-columns: 0.9fr 1.1fr;
   }
 
+  .contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex;
+  }
+
   .map-frame,
   .map-frame iframe {
     min-height: 390px;
@@ -741,24 +806,45 @@ h2 {
   }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .drink-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card-icon-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .card-icon-circle svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 767px) {
   .menu-toggle {
     display: block;
   }
 
   .nav-links {
-    position: absolute;
+    position: fixed;
+    z-index: 21;
     top: 72px;
     right: 0;
+    bottom: 0;
     left: 0;
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 8px 18px 16px;
+    padding: clamp(20px, 8vh, 64px) 18px 16px;
     border-top: 1px solid rgba(17, 17, 17, 0.15);
     background: var(--amarelo);
-    box-shadow: 0 12px 14px rgba(17, 17, 17, 0.12);
   }
 
   .nav-links.is-open {
@@ -766,6 +852,7 @@ h2 {
   }
 
   .nav-links a {
+    min-height: 48px;
     padding: 12px 10px;
     border-radius: 9px;
   }
@@ -776,8 +863,8 @@ h2 {
   }
 }
 
-@media (min-width: 761px) {
-  .floating-call {
+@media (min-width: 768px) {
+  .floating-actions {
     display: none;
   }
 
@@ -786,7 +873,7 @@ h2 {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 479px) {
   .container {
     width: calc(100% - 28px);
   }
@@ -819,5 +906,44 @@ h2 {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: none) {
+  .menu-card:hover,
+  .button:hover,
+  .nav-links a:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .instagram-button:hover,
+  .button-primary:hover,
+  .whatsapp-button:hover {
+    background: inherit;
+  }
+}
+
+.menu-card:active,
+.button:active,
+.floating-button:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .menu-card:hover .card-icon-circle svg {
+    animation: icon-balance 420ms ease-in-out;
+  }
+}
+
+@keyframes icon-balance {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-4deg) scale(1.07);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
   }
 }

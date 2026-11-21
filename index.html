@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zé da Vitamina: pastel feito na hora e o sabor de sempre no centro de Betim. Confira o cardápio, horário, localização e telefone para pedidos.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zé da Vitamina: pastéis feitos na hora, bebidas e entregas em Betim e Igarapé. Confira o cardápio, horário, localização e telefones para pedidos.">
   <meta name="theme-color" content="#FFC107">
   <meta property="og:title" content="Zé da Vitamina | Pastelaria em Betim">
   <meta property="og:description" content="Pastéis feitos na hora, bebidas e aquele sabor de sempre no centro de Betim.">
@@ -21,6 +21,18 @@
     "name": "Zé da Vitamina",
     "servesCuisine": "Pastelaria",
     "telephone": "+553135323001",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+553135323001",
+        "contactType": "pedidos em Betim"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+5531984049139",
+        "contactType": "tele-entrega em Igarapé"
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Governador Valadares, 173",
@@ -51,7 +63,7 @@
   <header class="site-header">
     <nav class="navigation container" aria-label="Menu principal">
       <a class="brand" href="#inicio" aria-label="Zé da Vitamina, início">
-        <img class="brand-icon" src="./logo-ze-da-vitamina.jpg" alt="Logotipo da Zé da Vitamina">
+        <img class="brand-icon" src="./logo-ze-da-vitamina@2x.png" alt="Logotipo da Zé da Vitamina">
         <span>Zé da <strong>Vitamina</strong></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-links">
@@ -75,15 +87,15 @@
           <h1 id="hero-title">Pastel feito na hora.<br><span>Sabor de sempre.</span></h1>
           <p class="hero-description">Seu pastel favorito, fresquinho e preparado na hora, no coração de Betim.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#pasteis">Ver cardápio <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#pasteis">Conheça nossos sabores <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" href="#localizacao"><span aria-hidden="true">📍</span> Como chegar</a>
-            <a class="button button-outline" href="tel:+553135323001"><span aria-hidden="true">📞</span> Peça por telefone</a>
+            <a class="button button-outline" href="tel:+553135323001"><span aria-hidden="true">📞</span> Ligue para a gente</a>
           </div>
           <p class="hero-hours"><span aria-hidden="true">🕒</span> De segunda a sábado. Esperamos por você!</p>
         </div>
-        <div class="hero-art reveal" role="img" aria-label="Pastel ilustrado com ícone de emoji">
+        <div class="hero-art reveal">
           <span class="art-rays" aria-hidden="true">✳</span>
-          <img class="hero-emoji" src="./logo-ze-da-vitamina.jpg" alt="Logotipo da Zé da Vitamina">
+          <img class="hero-emoji" src="./logo-ze-da-vitamina@2x.png" alt="Logotipo da Zé da Vitamina">
           <span class="art-sticker">Feito na hora!</span>
           <span class="art-drink" aria-hidden="true">🥤</span>
         </div>
@@ -95,8 +107,8 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Massa crocante, feito na hora</p>
-          <h2 id="pasteis-title">Escolha seu <span>pastel</span></h2>
-          <p>Qual desses clássicos vai ser o seu hoje?</p>
+          <h2 id="pasteis-title">Nossos <span>sabores</span></h2>
+          <p>Conheça os sabores que fazem parte do nosso cardápio.</p>
         </div>
         <div class="menu-grid" id="pasteis-lista" aria-label="Cardápio de pastéis"></div>
       </div>
@@ -107,14 +119,14 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Para acompanhar</p>
           <h2 id="bebidas-title">Bebidas <span>geladinhas</span></h2>
-          <p>Escolha uma bebida para completar seu pedido.</p>
+          <p>Sucos e refrigerantes para acompanhar os nossos pastéis.</p>
         </div>
         <div class="drink-group reveal">
-          <h3 class="group-title"><span aria-hidden="true">🍇</span> Sucos</h3>
+          <h3 class="group-title">Sucos</h3>
           <div class="menu-grid drink-grid" id="sucos-lista" aria-label="Sucos"></div>
         </div>
         <div class="drink-group reveal">
-          <h3 class="group-title"><span aria-hidden="true">🥤</span> Refrigerantes</h3>
+          <h3 class="group-title">Refrigerantes</h3>
           <div class="menu-grid drink-grid" id="refrigerantes-lista" aria-label="Refrigerantes"></div>
         </div>
       </div>
@@ -165,10 +177,23 @@
         <div class="contact-grid">
           <div class="contact-card delivery-card reveal">
             <span class="contact-emoji" aria-hidden="true">🛵</span>
-            <p class="eyebrow">Peça por telefone</p>
+            <p class="eyebrow">Contato e Entregas – Betim</p>
             <h3>Faça seu pedido por telefone</h3>
             <a class="contact-phone" href="tel:+553135323001" aria-label="Ligar para (31) 3532-3001">(31) 3532-3001</a>
             <a class="button button-primary call-button" href="tel:+553135323001"><span aria-hidden="true">📞</span> Ligar agora</a>
+          </div>
+          <div class="contact-card whatsapp-card reveal">
+            <span class="contact-emoji" aria-hidden="true">🛵</span>
+            <p class="eyebrow">Tele Entrega Igarapé</p>
+            <h3>Fale pelo WhatsApp</h3>
+            <a class="contact-phone" href="https://wa.me/5531984049139" target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp pelo número (31) 98404-9139">(31) 98404-9139</a>
+            <a class="button whatsapp-button" href="https://wa.me/5531984049139" target="_blank" rel="noopener noreferrer">
+              <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.48 0 .11 5.37.11 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.2-1.63a11.94 11.94 0 0 0 5.87 1.49h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.2-3.53-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.68.97.98-3.59-.23-.37a9.85 9.85 0 0 1-1.51-5.25c0-5.44 4.42-9.86 9.86-9.86 2.64 0 5.12 1.03 6.99 2.9a9.8 9.8 0 0 1 2.88 6.98c0 5.44-4.43 9.86-9.88 9.86Z"/>
+                <path d="M17.5 14.54c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+              </svg>
+              Chamar no WhatsApp
+            </a>
           </div>
           <div class="contact-card social-card reveal">
             <span class="contact-emoji" aria-hidden="true">📱</span>
@@ -193,12 +218,13 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-brand">
-        <img class="footer-logo" src="./logo-ze-da-vitamina.jpg" alt="">
+        <img class="footer-logo" src="./logo-ze-da-vitamina@2x.png" alt="">
         <strong>Zé da Vitamina</strong>
       </div>
       <div class="footer-details">
         <p><span aria-hidden="true">📍</span> Av. Governador Valadares, 173 – Centro, Betim – MG</p>
         <a href="tel:+553135323001"><span aria-hidden="true">📞</span> (31) 3532-3001</a>
+        <a href="https://wa.me/5531984049139" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🛵</span> Tele Entrega Igarapé: (31) 98404-9139</a>
         <a href="https://www.instagram.com/zedavitamina_/" target="_blank" rel="noopener noreferrer">
           <span aria-hidden="true">◎</span> @zedavitamina_
         </a>
@@ -208,8 +234,17 @@
     </div>
   </footer>
 
-  <a class="floating-call" href="tel:+553135323001" aria-label="Ligar agora para (31) 3532-3001">
-    <span aria-hidden="true">📞</span> Ligar
-  </a>
+  <div class="floating-actions" aria-label="Atalhos para contato">
+    <a class="floating-button floating-call" href="tel:+553135323001" aria-label="Ligar para Betim: (31) 3532-3001">
+      <span aria-hidden="true">📞</span> Ligar
+    </a>
+    <a class="floating-button floating-whatsapp" href="https://wa.me/5531984049139" target="_blank" rel="noopener noreferrer" aria-label="Chamar a Tele Entrega Igarapé no WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.48 0 .11 5.37.11 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.2-1.63a11.94 11.94 0 0 0 5.87 1.49h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.2-3.53-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.68.97.98-3.59-.23-.37a9.85 9.85 0 0 1-1.51-5.25c0-5.44 4.42-9.86 9.86-9.86 2.64 0 5.12 1.03 6.99 2.9a9.8 9.8 0 0 1 2.88 6.98c0 5.44-4.43 9.86-9.88 9.86Z"/>
+        <path d="M17.5 14.54c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.71.22 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
 </body>
 </html>
