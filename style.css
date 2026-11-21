@@ -560,6 +560,18 @@ h2 {
   font-size: 2.4rem;
 }
 
+.moto-betim {
+  filter: hue-rotate(35deg) saturate(1.35);
+}
+
+.moto-igarape {
+  filter: hue-rotate(190deg) saturate(1.4);
+}
+
+.phone-social-icon {
+  background: var(--laranja);
+}
+
 .contact-card .eyebrow {
   margin-bottom: 5px;
 }
